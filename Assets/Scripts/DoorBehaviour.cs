@@ -13,9 +13,10 @@ public class DoorBehaviour : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementUDP>().enabled = false;
 
             leftDoor.transform.Rotate(0, -120, 0); 
-            rightDoor.transform.Rotate(0, 120, 0);  
+            rightDoor.transform.Rotate(0, 120, 0);
 
-            //display message before next level
+            //reset coins and display message before next level
+            PlayerMovement.counter = 0;
             manager.CompleteLevel();
         }
     }
