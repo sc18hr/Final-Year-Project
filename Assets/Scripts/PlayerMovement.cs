@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     //counter for the coin collisions
     public static int counter = 0;
+    public static int sum = 0;
 
     //used to know which limb to move
     private int moveCounter = 0;

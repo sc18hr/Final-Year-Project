@@ -16,6 +16,7 @@ public class DoorBehaviour : MonoBehaviour
             rightDoor.transform.Rotate(0, 120, 0);
 
             //reset coins and display message before next level
+            PlayerMovement.sum += PlayerMovement.counter;
             PlayerMovement.counter = 0;
             manager.CompleteLevel();
         }
