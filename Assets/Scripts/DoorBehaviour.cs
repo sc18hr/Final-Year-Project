@@ -12,8 +12,8 @@ public class DoorBehaviour : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementUDP>().enabled = false;
 
-            leftDoor.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, -150, 0), 0.5f);
-            rightDoor.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 150, 0), 0.5f);
+            leftDoor.transform.Rotate(0, -120, 0); 
+            rightDoor.transform.Rotate(0, 120, 0);  
 
             //display message before next level
             manager.CompleteLevel();
