@@ -19,8 +19,8 @@ public class PlayerMovementUDP : MonoBehaviour
     {
         if (UDP_Handling.Y2pos > 20)
         {
-            this.moveBody();
-            this.moveForward();
+            this.MoveBody();
+            this.MoveForward();
         }
         else if (transform.position.z <= -21)
         {
@@ -29,53 +29,53 @@ public class PlayerMovementUDP : MonoBehaviour
 
         if (UDP_Handling.X2pos < -40)
         {
-            this.moveBody();
-            this.moveLeft();
+            this.MoveBody();
+            this.MoveLeft();
         }
 
         if (UDP_Handling.Y2pos < -20)
         {
-            this.moveBody();
-            this.moveBackwards();
+            this.MoveBody();
+            this.MoveBackwards();
         }
 
         if (UDP_Handling.X2pos > 40)
         {
-            this.moveBody();
-            this.moveRight();
+            this.MoveBody();
+            this.MoveRight();
         }
     }
 
-    void moveForward()
+    void MoveForward()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), 0.5f);
         transform.position += new Vector3(0, 0, (float)UDP_Handling.Y2pos / 20 * Time.deltaTime);
-        UDP_Handling.Ytarget = UDP_Handling.Y2pos * 2;
+        UDP_Handling.Ytarget = UDP_Handling.Y2pos * 1.2;
     }
 
-    void moveLeft()
+    void MoveLeft()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, -90, 0), 0.5f);
         transform.position += new Vector3((float)UDP_Handling.X2pos / 30 * Time.deltaTime, 0, 0);
-        UDP_Handling.Xtarget = UDP_Handling.X2pos * 2;
+        UDP_Handling.Xtarget = UDP_Handling.X2pos * 1.2;
     }
 
-    void moveBackwards()
+    void MoveBackwards()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180, 0), 0.5f);
         transform.position += new Vector3(0, 0, (float)UDP_Handling.Y2pos / 20 * Time.deltaTime);
-        UDP_Handling.Ytarget = UDP_Handling.Y2pos * 2;
+        UDP_Handling.Ytarget = UDP_Handling.Y2pos * 1.2;
     }
 
-    void moveRight()
+    void MoveRight()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), 0.5f);
         transform.position += new Vector3((float)UDP_Handling.X2pos / 30 * Time.deltaTime, 0, 0);
-        UDP_Handling.Xtarget = UDP_Handling.X2pos * 2;
+        UDP_Handling.Xtarget = UDP_Handling.X2pos * 1.2;
     }
 
     //Rotates the arms and legs depending on the current moveCounter
-    void moveBody()
+    void MoveBody()
     {
         if (moveCounter < 30) //left arm + right leg forward
         {
