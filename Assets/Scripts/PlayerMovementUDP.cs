@@ -22,10 +22,6 @@ public class PlayerMovementUDP : MonoBehaviour
             this.MoveBody();
             this.MoveForward();
         }
-        else if (transform.position.z <= -21)
-        {
-            return;
-        }
 
         if (UDP_Handling.X2pos < -40)
         {
@@ -35,6 +31,7 @@ public class PlayerMovementUDP : MonoBehaviour
 
         if (UDP_Handling.Y2pos < -20)
         {
+            if (transform.position.z <= -21) return;
             this.MoveBody();
             this.MoveBackwards();
         }
