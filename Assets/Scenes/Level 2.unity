@@ -4437,7 +4437,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 531255430430609850, guid: 90cd76370206b7544809e6b615d09306, type: 3}
       propertyPath: m_Name
-      value: Outter Walls
+      value: Outer Walls
       objectReference: {fileID: 0}
     - target: {fileID: 4410444747662857248, guid: 90cd76370206b7544809e6b615d09306, type: 3}
       propertyPath: m_RootOrder

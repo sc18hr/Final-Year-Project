@@ -29,17 +29,17 @@ public class PlayerMovementUDP : MonoBehaviour
             this.MoveLeft();
         }
 
+        if (UDP_Handling.X2pos > 40)
+        {
+            this.MoveBody();
+            this.MoveRight();
+        }
+
         if (UDP_Handling.Y2pos < -20)
         {
             if (transform.position.z <= -21) return;
             this.MoveBody();
             this.MoveBackwards();
-        }
-
-        if (UDP_Handling.X2pos > 40)
-        {
-            this.MoveBody();
-            this.MoveRight();
         }
     }
 
